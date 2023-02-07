@@ -1,13 +1,16 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 function Header({className}) {
   return (
-    <nav className={`flex justify-between py-4 px-12 items-center bg-light-els ${className}`}>
-      <h2 className="font-bold text-xl">Where in the world?</h2>
+    <nav className={`flex shadow-lg shadow-gray-50 justify-between py-8 sm:py-4 px-6 sm:px-12 items-center bg-light-els ${className}`}>
+      <Link href="/">
+        <h2 className="font-bold text-md sm:text-xl">Where in the world?</h2>
+      </Link>
       <div>
         <FontAwesomeIcon icon={faMoon} className="mr-2" />
-        <span>Dark Mode</span>
+        <span className="text-sm sm:text-base">Dark Mode</span>
       </div>
     </nav>
   );

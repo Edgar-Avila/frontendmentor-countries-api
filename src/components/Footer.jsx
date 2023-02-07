@@ -1,6 +1,6 @@
 function Footer({ className }) {
   return (
-    <footer className={`text-center italic font-bold p-2 ${className}`}>
+    <footer className={`text-center italic font-bold p-2 ${className} mt-8`}>
       Challenge by{" "}
       <a
         href="https://www.frontendmentor.io/?ref=challenge"

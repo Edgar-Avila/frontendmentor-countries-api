@@ -10,12 +10,12 @@ function Country({ country }) {
 
   return (
     <Layout>
-      <div className="container mx-auto px-12">
+      <div className="container mx-auto px-6 sm:px-12">
         <button onClick={()=>router.back()} className="shadow-lg px-8 py-1 mb-12 hover:scale-105">
           <FontAwesomeIcon icon={faArrowLeft} className="mr-2"/>
           <span>Back</span>
         </button>
-        <div className="flex gap-12 items-center">
+        <div className="flex gap-12 items-center flex-col md:flex-row">
           <Image
             src={country.flag}
             alt={`${country.name} flag`}
@@ -26,7 +26,7 @@ function Country({ country }) {
           />
           <div className="basis-0 grow">
             <h1 className="text-4xl font-bold mb-6">{country.name}</h1>
-            <div className="flex justify-between mb-8">
+            <div className="flex gap-8 sm:gap-0 justify-between mb-8 flex-col sm:flex-row">
               <div className="basis-0 grow">
                 <p><b>Native Name: </b>{country.nativeName}</p>
                 <p><b>Population: </b>{country.population}</p>

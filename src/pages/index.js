@@ -30,19 +30,19 @@ function Home({ countries }) {
 
   return (
     <Layout>
-      <div className="container mx-auto px-12">
-        <div className="flex justify-between mb-8">
-          <div className="shadow bg-light-els text-light-input focus-within:bg-red">
+      <div className="container mx-auto px-6 sm:px-12">
+        <div className="flex justify-between mb-8 flex-wrap gap-4">
+          <div className="shadow bg-light-els text-light-input focus-within:bg-red grow sm:grow-0">
             <FontAwesomeIcon icon={faSearch} className="mr-4 h-full pl-4" />
             <input
               type="text"
               value={search}
               onChange={searchChange}
               placeholder="Search for a country..."
-              className="focus:outline-none h-full py-2 pr-4"
+              className="focus:outline-none h-full py-4 pr-4"
             />
           </div>
-          <select name="regions" id="regions" className="p-4 rounded shadow bg-light-els" onChange={selectChange} defaultValue="">
+          <select name="regions" id="regions" className="p-4 cursor-pointer rounded shadow bg-light-els text-light-input" onChange={selectChange} defaultValue="">
             <option value="" disabled hidden>Filter by Region</option>
             <option value="Asia">Asia</option>
             <option value="Africa">Africa</option>
