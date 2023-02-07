@@ -11,7 +11,7 @@ function Country({ country }) {
   return (
     <Layout>
       <div className="container mx-auto px-6 sm:px-12">
-        <button onClick={()=>router.back()} className="shadow-lg px-8 py-1 mb-12 hover:scale-105">
+        <button onClick={()=>router.back()} className="shadow-lg px-8 py-1 mb-12 hover:scale-105 dark:bg-dark-els">
           <FontAwesomeIcon icon={faArrowLeft} className="mr-2"/>
           <span>Back</span>
         </button>
@@ -49,7 +49,7 @@ function Country({ country }) {
                 <b>Border Countries: </b>
                 <div className="flex gap-2 flex-wrap">
                   {country.borders.map(border => (
-                    <Link href={border.code} key={border.code} className="shadow px-4 py-1 hover:scale-105">
+                    <Link href={border.code} key={border.code} className="shadow px-4 py-1 hover:scale-105 dark:bg-dark-els">
                       {border.name}
                     </Link>
                   ))}

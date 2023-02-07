@@ -6,7 +6,7 @@ import { useThemeStore } from "@/store/theme";
 function Header({className}) {
   const {toggleTheme, isDark} = useThemeStore()
   return (
-    <nav className={`flex shadow-lg shadow-gray-50 justify-between py-8 sm:py-4 px-6 sm:px-12 items-center bg-light-els ${className}`}>
+    <nav className={`flex shadow-lg shadow-gray-50 justify-between py-8 sm:py-4 px-6 sm:px-12 items-center bg-light-els ${className} dark:bg-dark-els dark:text-dark-text`}>
       <Link href="/">
         <h2 className="font-bold text-md sm:text-xl">Where in the world?</h2>
       </Link>

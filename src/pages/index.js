@@ -30,19 +30,19 @@ function Home({ countries }) {
 
   return (
     <Layout>
-      <div className="container mx-auto px-6 sm:px-12">
+      <div className="container mx-auto px-6 sm:px-12 dark:bg-dark-bg">
         <div className="flex justify-between mb-8 flex-wrap gap-4">
-          <div className="shadow bg-light-els text-light-input focus-within:bg-red grow sm:grow-0">
+          <div className="shadow bg-light-els text-light-input focus-within:bg-red grow sm:grow-0 dark:bg-dark-els dark:text-dark-text rounded overflow-hidden">
             <FontAwesomeIcon icon={faSearch} className="mr-4 h-full pl-4" />
             <input
               type="text"
               value={search}
               onChange={searchChange}
               placeholder="Search for a country..."
-              className="focus:outline-none h-full py-4 pr-4"
+              className="focus:outline-none h-full py-4 pr-4 dark:bg-dark-els dark:text-dark-text"
             />
           </div>
-          <select name="regions" id="regions" className="p-4 cursor-pointer rounded shadow bg-light-els text-light-input" onChange={selectChange} defaultValue="">
+          <select name="regions" id="regions" className="p-4 cursor-pointer rounded shadow bg-light-els text-light-input dark:bg-dark-els dark:text-dark-text" onChange={selectChange} defaultValue="">
             <option value="" disabled hidden>Filter by Region</option>
             <option value="Asia">Asia</option>
             <option value="Africa">Africa</option>
@@ -55,7 +55,7 @@ function Home({ countries }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-16">
           {filtered.map(country => (
             <Link href={`/${country.code}`} key={country.code}>
-              <div className="rounded overflow-hidden bg-light-els shadow-md h-full">
+              <div className="rounded overflow-hidden bg-light-els shadow-md h-full dark:bg-dark-els">
                 <Image
                   src={country.flag} alt={country.name} width={600} height={400} className="object-cover aspect-video" />
                 <div className="px-4 pt-6 pb-12">
