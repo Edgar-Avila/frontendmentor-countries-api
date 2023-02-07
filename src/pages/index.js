@@ -18,7 +18,7 @@ function Home({ countries }) {
       }))
     }, 500)
     return () => clearTimeout(fn)
-  }, [search, select])
+  }, [search, select, countries])
 
   const searchChange = (event) => {
     setSearch(event.currentTarget.value)
@@ -54,7 +54,7 @@ function Home({ countries }) {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-16">
           {filtered.map(country => (
-            <Link href={`/${country.name}`} key={country.name}>
+            <Link href={`/${country.code}`} key={country.code}>
               <div className="rounded overflow-hidden bg-light-els shadow-md h-full">
                 <Image
                   src={country.flag} alt={country.name} width={600} height={400} className="object-cover aspect-video" />
@@ -77,14 +77,15 @@ function Home({ countries }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("https://restcountries.com/v3.1/all")
+  const res = await fetch("https://restcountries.com/v2/all")
   const data = await res.json()
   const countries = data.map(country => ({
     flag: country.flags.png,
-    name: country.name.common,
+    name: country.name,
     population: country.population,
     region: country.region,
-    capital: country.capital || null
+    capital: country.capital || null,
+    code: country.alpha3Code,
   }))
   return {
     props: { countries }
