@@ -16,7 +16,7 @@ function Home({ countries }) {
       setFiltered(countries.filter(country => {
         return searchRegex.test(country.name) && (select === ''  || country.region === select)
       }))
-    }, 500)
+    }, 250)
     return () => clearTimeout(fn)
   }, [search, select, countries])
 
@@ -55,7 +55,7 @@ function Home({ countries }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-16">
           {filtered.map(country => (
             <Link href={`/${country.code}`} key={country.code}>
-              <div className="rounded overflow-hidden bg-light-els shadow-md h-full dark:bg-dark-els">
+              <div className="rounded overflow-hidden bg-light-els shadow-md h-full dark:bg-dark-els hover:scale-105 hover:-translate-y-2">
                 <Image
                   src={country.flag} alt={country.name} width={600} height={400} className="object-cover aspect-video" />
                 <div className="px-4 pt-6 pb-12">
