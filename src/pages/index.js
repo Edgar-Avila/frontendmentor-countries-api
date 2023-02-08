@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import numberSep from "@/util/numberSep";
 
 function Home({ countries }) {
   const [search, setSearch] = useState("")
@@ -42,7 +43,7 @@ function Home({ countries }) {
               className="focus:outline-none h-full py-4 pr-4 dark:bg-dark-els dark:text-dark-text"
             />
           </div>
-          <select name="regions" id="regions" className="p-4 cursor-pointer rounded shadow bg-light-els text-light-input dark:bg-dark-els dark:text-dark-text" onChange={selectChange} defaultValue="">
+          <select aria-label="regions" name="regions" id="regions" className="p-4 cursor-pointer rounded shadow bg-light-els text-light-input dark:bg-dark-els dark:text-dark-text" onChange={selectChange} defaultValue="">
             <option value="" disabled hidden>Filter by Region</option>
             <option value="Asia">Asia</option>
             <option value="Africa">Africa</option>
@@ -82,7 +83,7 @@ export async function getStaticProps() {
   const countries = data.map(country => ({
     flag: country.flags.png,
     name: country.name,
-    population: country.population,
+    population: numberSep(country.population),
     region: country.region,
     capital: country.capital || null,
     code: country.alpha3Code,

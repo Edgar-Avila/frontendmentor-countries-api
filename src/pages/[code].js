@@ -4,6 +4,7 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/router";
+import numberSep from "@/util/numberSep";
 
 function Country({ country }) {
   const router = useRouter()
@@ -112,7 +113,7 @@ export async function getStaticProps({ params }) {
       country: {
         name: country.name || null,
         nativeName: country.nativeName || null,
-        population: country.population || null,
+        population: numberSep(country.population),
         region: country.region || null,
         subregion: country.subregion || null,
         capital: country.capital || null,

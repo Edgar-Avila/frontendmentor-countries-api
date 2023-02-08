@@ -7,7 +7,7 @@ function Layout({children}) {
   return ( 
     <div className={`min-h-screen flex flex-col bg-light-bg ${isDark? 'dark' : 'light'}`}>
       <Header/>
-      <div className="dark:bg-dark-bg dark:text-dark-text py-12 grow"> {children} </div>
+      <main className="dark:bg-dark-bg dark:text-dark-text py-12 grow"> {children} </main>
       <Footer className="mt-auto"/>
     </div>
   );
